@@ -12,3 +12,12 @@ func TestSum(t *testing.T) {
 		t.Errorf("got %d want %d", got, want)
 	}
 }
+
+
+func BenchmarkSum(b *testing.B) {
+	numbers := [5]int{1, 2, 3, 4, 5}
+
+	for b.Loop() {
+		Sum(numbers)
+	}
+}
